@@ -1,3 +1,4 @@
+// TODO: fix the link to the github, and the gnome project
 hide.addEventListener("click", async () => {
     let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
   
