@@ -4,10 +4,14 @@ hide.addEventListener("click", async () => {
     let css = "";
     if (hidden) {
         css = "* {cursor: auto !important}";
-        hidden = false
+        document.getElementById("buttonimg").src = "images/cursor.svg";
+        document.getElementById("buttonimg").alt = "Mouse cursor shown"
+        hidden = false;
     }
     else {
         css = "* {cursor: none !important}";
+        document.getElementById("buttonimg").src = "images/hidden.svg";
+        document.getElementById("buttonimg").alt = "Mouse cursor hidden"
         hidden = true;
     }
     chrome.scripting.insertCSS({
