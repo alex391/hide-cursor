@@ -1,6 +1,11 @@
+- [ ] The code that does the hiding needs reworked - be less dumb about checking if we've already hid the cursor
 - [ ] There's almost no CSS
 - [ ] Link to license might be necessary on the popup or as a message on install
-- [ ] keyboard shortcuts for hide/show and also to temporarily highlight where the mouse is (power toys style)
+- [ ] keyboard shortcuts for hide/show and also to temporarily highlight where the mouse is (power toys style). Should be customizable.
 - [ ] publish to chrome store
 - [ ] firefox compatibility
 - [ ] publish to firefox store
+- [ ] favicon for options page
+- [ ] make it clear that you need to reload the page to actually restore the original cursor [example](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor)
+- [ ] link to todo from readme
+- [ ] add installation instructions (from source)
