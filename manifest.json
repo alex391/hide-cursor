@@ -1,0 +1,6 @@
+{
+    "name": "Hide Cursor",
+    "description": "Hide the cursor when a shortcut key is pressed",
+    "version": "0.0.0.0",
+    "manifest_version": 3
+  }
