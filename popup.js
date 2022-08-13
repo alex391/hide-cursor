@@ -1,21 +1,17 @@
+let hidden = false;
 hide.addEventListener("click", async () => {
     let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-  
-    chrome.scripting.executeScript({
+    let css = "";
+    if (hidden) {
+        css = "* {cursor: auto}";
+        hidden = false
+    }
+    else {
+        css = "* {cursor: none}"
+        hidden = true;
+    }
+    chrome.scripting.insertCSS({
       target: { tabId: tab.id },
-      function: hideCursor,
+      css: css,
     });
 });
-
-function hideCursor(){
-    console.log("hiding");
-    let elements = document.getElementsByTagName("*");
-    for(let i = 0; i < elements.length; i++){
-        if (elements[i].style.cursor == "none"){
-            elements[i].style.cursor = "auto";
-        }
-        else{
-            elements[i].style.cursor = "none";
-        }
-    }
-}
