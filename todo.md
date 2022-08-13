@@ -1,3 +1,6 @@
-- [ ] There almost no CSS
+- [ ] There's almost no CSS
 - [ ] Link to license might be necessary on the popup or as a message on install
 - [ ] keyboard shortcuts for hide/show and also to temporarily highlight where the mouse is (power toys style)
+- [ ] publish to chrome store
+- [ ] firefox compatibility
+- [ ] publish to firefox store
