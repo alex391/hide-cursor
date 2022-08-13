@@ -1,6 +1,17 @@
 {
     "name": "Hide Cursor",
     "description": "Hide the cursor when a shortcut key is pressed",
-    "version": "0.0.0.0",
-    "manifest_version": 3
+    "version": "0.1.2",
+    "manifest_version": 3,
+    "permissions": ["activeTab", "scripting"],
+
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "/images/cursor16.png",
+            "32": "/images/cursor32.png",
+            "48": "/images/cursor48.png",
+            "128": "/images/cursor128.png"
+      }
+    }
   }
