@@ -1,4 +1,4 @@
-# hide-cursor
+# Hide Cursor
 A chrome (and Firefox eventually) extension that hides the cursor.
 
 ## Current plans

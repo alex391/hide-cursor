@@ -1,6 +1,6 @@
 - [x] The code that does the hiding needs reworked - be less dumb about checking if we've already hid the cursor
 - [x] doesn't work on twitch.tv
-- [ ] There's almost no CSS
+- [x] There's almost no CSS
 - [ ] keyboard shortcuts for hide/show and also to temporarily highlight where the mouse is (power toys style). Should be customizable.
 - [ ] publish to chrome store
 - [ ] firefox compatibility

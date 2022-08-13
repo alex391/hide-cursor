@@ -5,13 +5,16 @@ hide.addEventListener("click", async () => {
     if (hidden) {
         css = "* {cursor: auto !important}";
         document.getElementById("buttonimg").src = "images/cursor.svg";
-        document.getElementById("buttonimg").alt = "Mouse cursor shown"
+        document.getElementById("buttonimg").alt = "Mouse cursor shown";
+        document.getElementById("buttonimg").title = "Mouse cursor shown";
         hidden = false;
     }
     else {
         css = "* {cursor: none !important}";
         document.getElementById("buttonimg").src = "images/hidden.svg";
         document.getElementById("buttonimg").alt = "Mouse cursor hidden"
+        document.getElementById("buttonimg").title = "Mouse cursor hidden";
+
         hidden = true;
     }
     chrome.scripting.insertCSS({
