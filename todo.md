@@ -8,4 +8,4 @@
 - [ ] favicon for options page
 - [ ] make it clear that you need to reload the page to actually restore the original cursor [example](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor)
 - [x] link to todo from readme
-- [ ] add installation instructions (from source)
+- [x] add installation instructions (from source)
