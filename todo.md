@@ -9,3 +9,4 @@
 - [ ] make it clear that you need to reload the page to actually restore the original cursor [example](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor)
 - [x] link to todo from readme
 - [x] add installation instructions (from source)
+- [x] store the current state so that it can be read later
