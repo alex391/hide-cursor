@@ -18,11 +18,28 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 "use strict";
 function isHidden(){
     // We need a way to tell if we've already hidden the cursor in the tab.
-    // We do this by assuming that no one is dumb enough to hide the cursor in the "html" element, except for us.
-    // (if they are, then it'll work the second time and that's good enough)
-    // There's probably better ways to do this, but this works.
-    return (getComputedStyle(document.getElementsByTagName("html")[0]).cursor == "none")? true : false; 
+    // mostly just a check for undefined
+    if (window.cursorHidden8YkVtvpta === undefined){ // (random characters to make it less likely to be already declared by something)
+        //the website is in it's default state - the cursor hasn't been hidden by us yet
+        return false;
+    }
+    else {
+        // it has been hidden by us, so just return the value.
+        return window.cursorHidden8YkVtvpta;
+    }
 }
+function toggleHidden(hidden){
+    //Set the variable to keep track of the state on that window
+    //TODO: might as well also actually do the cursor hiding here too
+    if(hidden){
+        window.cursorHidden8YkVtvpta = false; // can't just not it because it might not exist.
+    }
+    else {
+        window.cursorHidden8YkVtvpta = true;
+    }
+}
+//TODO: function setUI(hidden){} to change the image out
+//TODO: function setCSS(hidden){} to change the css to the right value
 async function init(){
     //initialize icon to be correct
     let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
@@ -71,7 +88,13 @@ hide.addEventListener("click", async () => {
             target: { tabId: tab.id, allFrames: true },
             css: css,
         });
+        chrome.scripting.executeScript({
+            target: {tabId: tab.id },
+            func: toggleHidden,
+            args: [hidden]
+        })
     });
+    
     
 });
 
