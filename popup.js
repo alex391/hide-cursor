@@ -19,82 +19,80 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 function isHidden(){
     // We need a way to tell if we've already hidden the cursor in the tab.
     // mostly just a check for undefined
-    if (window.cursorHidden8YkVtvpta === undefined){ // (random characters to make it less likely to be already declared by something)
+    if (window.cursorHidden === undefined){ 
         //the website is in it's default state - the cursor hasn't been hidden by us yet
         return false;
     }
     else {
         // it has been hidden by us, so just return the value.
-        return window.cursorHidden8YkVtvpta;
+        return window.cursorHidden;
     }
 }
 function toggleHidden(hidden){
     //Set the variable to keep track of the state on that window
     //TODO: might as well also actually do the cursor hiding here too
     if(hidden){
-        window.cursorHidden8YkVtvpta = false; // can't just not it because it might not exist.
+        window.cursorHidden= false; // can't just not it because it might not exist.
     }
     else {
-        window.cursorHidden8YkVtvpta = true;
+        window.cursorHidden = true;
     }
 }
-//TODO: function setUI(hidden){} to change the image out
+function setUI(hidden) {
+    //change the image out
+    const buttonImg = document.getElementById("buttonimg");
+    if (hidden) {
+        buttonImg.src = "images/hidden.svg";
+        buttonImg.alt = "Mouse cursor hidden"
+        buttonImg.title = "Mouse cursor hidden";
+    }
+    else {
+        buttonImg.src = "images/cursor.svg";
+        buttonImg.alt = "Mouse cursor shown";
+        buttonImg.title = "Mouse cursor shown";
+    }
+}
 //TODO: function setCSS(hidden){} to change the css to the right value
 async function init(){
     //initialize icon to be correct
-    let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
     chrome.scripting.executeScript({
         target: { tabId: tab.id },
         func: isHidden,
     },
     (injectionResults) => {
-        let hidden = injectionResults[0].result; // we only care about the first one
-        if (!hidden) {
-            document.getElementById("buttonimg").src = "images/cursor.svg";
-            document.getElementById("buttonimg").alt = "Mouse cursor shown";
-            document.getElementById("buttonimg").title = "Mouse cursor shown";
-        }
-        else {
-            document.getElementById("buttonimg").src = "images/hidden.svg";
-            document.getElementById("buttonimg").alt = "Mouse cursor hidden"
-            document.getElementById("buttonimg").title = "Mouse cursor hidden";
-        }
+        const hidden = injectionResults[0].result; // we only care about the first one
+        setUI(hidden);
+    });
+    hide.addEventListener("click", async () => {
+        // listen for the button press, and then toggle the cursor
+        const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+        chrome.scripting.executeScript({
+            target: {tabId: tab.id },
+            func: isHidden,
+        },
+        (injectionResults) => {
+            const hidden = injectionResults[0].result; // we only care about the first one
+            let css = "";
+            setUI(!hidden); // This is notted because we're about to change what isHidden would return (we update the UI before the change takes place).
+            if (hidden) {
+                css = "* {cursor: auto !important}";
+            }
+            else {
+                css = "* {cursor: none !important}";
+            }
+            chrome.scripting.insertCSS({
+                target: { tabId: tab.id, allFrames: true }, //TODO: inject a link tag rather than injecting css this way https://stackoverflow.com/a/19127555
+                css: css,
+            });
+            chrome.scripting.executeScript({
+                target: {tabId: tab.id },
+                func: toggleHidden,
+                args: [hidden]
+            })
+        });
+        
+        
     });
 }
 init();
-hide.addEventListener("click", async () => {
-    // listen for the button press, and then toggle the cursor
-    let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-    chrome.scripting.executeScript({
-        target: {tabId: tab.id },
-        func: isHidden,
-    },
-    (injectionResults) => {
-        let hidden = injectionResults[0].result; // we only care about the first one
-        let css = "";
-        if (hidden) {
-            css = "* {cursor: auto !important}";
-            document.getElementById("buttonimg").src = "images/cursor.svg";
-            document.getElementById("buttonimg").alt = "Mouse cursor shown";
-            document.getElementById("buttonimg").title = "Mouse cursor shown";
-        }
-        else {
-            css = "* {cursor: none !important}";
-            document.getElementById("buttonimg").src = "images/hidden.svg";
-            document.getElementById("buttonimg").alt = "Mouse cursor hidden"
-            document.getElementById("buttonimg").title = "Mouse cursor hidden";
-        }
-        chrome.scripting.insertCSS({
-            target: { tabId: tab.id, allFrames: true },
-            css: css,
-        });
-        chrome.scripting.executeScript({
-            target: {tabId: tab.id },
-            func: toggleHidden,
-            args: [hidden]
-        })
-    });
-    
-    
-});
-
