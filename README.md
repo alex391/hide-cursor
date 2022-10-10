@@ -12,5 +12,7 @@ A Chrome (and Firefox eventually) extension that hides the cursor.
 ## Current plans
 See [todo.md](todo.md) for what is currently in the works
 
+## Known issues
+See [known-issues.md]
 ## License
 Licensed under [GPLv3](LICENSE)

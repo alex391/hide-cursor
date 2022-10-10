@@ -36,9 +36,6 @@ function toggleHidden(hidden, cssLink){
         link.type = "text/css";
         link.rel = "stylesheet";
         document.getElementsByTagName("head")[0].appendChild(link);
-        // If more iframes are loaded, they won't be hidden
-        // Maybe add a mutation observer so to check for that? https://stackoverflow.com/a/45271114
-        // Will be a problem for ads.
     }
     else {
         // Unload the css

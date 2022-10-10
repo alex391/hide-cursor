@@ -1,0 +1,2 @@
+# Known issues
+1. Cursor will be shown on iframes that are dynamically added after toggling. Workaround: toggle hidden again if a new iframe needs to be hidden. Most dynamically added iframes are ads, use [uBlock Origin](https://ublockorigin.com).
