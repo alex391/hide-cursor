@@ -1,7 +1,7 @@
 {
     "name": "Hide Cursor",
     "description": "Hide the cursor when a shortcut key is pressed",
-    "version": "0.1.16",
+    "version": "0.1.17",
     "manifest_version": 3,
     "permissions": ["activeTab", "scripting"],
     "options_page": "options.html",
@@ -16,5 +16,11 @@
             "48": "/images/cursor48.png",
             "128": "/images/cursor128.png"
         }
-    }
+    },
+    "web_accessible_resources": [
+        {
+            "resources": [ "hidecursor.css" ],
+            "matches": [ "<all_urls>" ]
+        }
+    ]
 }
