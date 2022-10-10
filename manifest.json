@@ -1,7 +1,7 @@
 {
     "name": "Hide Cursor",
     "description": "Hide the cursor when a shortcut key is pressed",
-    "version": "0.1.19",
+    "version": "0.2.0",
     "manifest_version": 3,
     "permissions": ["activeTab", "scripting"],
     "options_page": "options.html",
@@ -22,5 +22,11 @@
             "resources": [ "hidecursor.css" ],
             "matches": [ "<all_urls>" ]
         }
-    ]
+    ],
+    "commands": {
+        "toggle-hidden": {
+            "suggested_key": "Ctrl+Shift+H",
+            "description": "Toggle weather the cursor is shown"
+        }
+    }
 }
