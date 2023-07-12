@@ -30,5 +30,11 @@
             "suggested_key": "Ctrl+Shift+H",
             "description": "Toggle weather the cursor is shown"
         }
+    },
+    "icons": {
+        "16": "/images/cursor16.png",
+        "32": "/images/cursor32.png",
+        "48": "/images/cursor48.png",
+        "128": "/images/cursor128.png"
     }
 }
