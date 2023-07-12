@@ -16,23 +16,22 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 "use strict";
-// TODO: This code is not DRY. I'm giving up for now because es6 export doesn't work in extensions.
-// Maybe jQuery would help here? Just trying to get away with plain JS for this.
-function isHidden(){
+export function isHidden(){
     // We need a way to tell if we've already hidden the cursor in the tab.
     // Just check if the link tag that we set up earlier is there
-    const LINKID = "HideCursorLinkID"; // id for the link
+    // TODO this really has to be here? Not very DRY
+    const LINKID = "HideCursorLinkID"; // id for the link 
     // It's hidden if the element exists
     return  Boolean(document.getElementById(LINKID));
 }
-function toggleHidden(hidden, cssLink){
+export function toggleHidden(hidden, cssLink){
     const LINKID = "HideCursorLinkID"; // id for the link
 
     // Set the variable to keep track of the state on that window
     if(!hidden){ // if it's not hidden, then hide it
         // Load the css to hide the cursor.
-        // https://stackoverflow.com/a/19127555 
-        let link = document.createElement("link");
+        // https://stackoverflow.com/a/19127555. Thanks to David Gilbertson - https://stackoverflow.com/users/1976597/david-gilbertson
+        const link = document.createElement("link");
         link.href = cssLink;
         link.id = LINKID;
         link.type = "text/css";
@@ -41,7 +40,7 @@ function toggleHidden(hidden, cssLink){
     }
     else {
         // Unload the css
-        let css = document.getElementById(LINKID);
+        const css = document.getElementById(LINKID);
         document.getElementsByTagName("head")[0].removeChild(css);
     }
 }
