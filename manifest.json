@@ -1,7 +1,7 @@
 {
     "name": "Hide Cursor",
     "description": "Hide the cursor when a shortcut key is pressed",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "manifest_version": 3,
     "minimum_chrome_version": "92",
     "permissions": ["activeTab", "scripting"],

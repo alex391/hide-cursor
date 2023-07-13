@@ -2,13 +2,12 @@
 - [x] doesn't work on twitch.tv
 - [x] There's almost no CSS
 - [x] keyboard shortcuts for hide/show
-- [ ] keyboard shortcut to highlight where the mouse is (power toys style?)
 - [x] Customizable shortcuts.
 - [x] Restore original cursor css, rather than just setting it to auto
-- [ ] publish to Chrome store
+- [x] publish to Chrome store
 - [ ] firefox compatibility
 - [ ] publish to firefox store
-- [ ] favicon for options page
+- [x] favicon for options page
 - [x] link to todo from readme
 - [x] add installation instructions (from source)
 - [x] store the current state so that it can be read later
