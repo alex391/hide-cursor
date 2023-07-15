@@ -12,7 +12,6 @@ A Chrome and Firefox extension that hides the cursor.
 #### Firefox
 1. Clone this repository: `git clone https://github.com/alex391/hide-cursor.git`
 2. Make a copy of [manifest-firefox.json](manifest-firefox.json) named `manifest.json`
-
 3. Go to `about:debugging`
 4. Click "This Firefox"
 5. Click "Load Temporary Add-on..."
