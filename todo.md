@@ -5,7 +5,7 @@
 - [x] Customizable shortcuts.
 - [x] Restore original cursor css, rather than just setting it to auto
 - [x] publish to Chrome store
-- [ ] firefox compatibility
+- [x] firefox compatibility
 - [ ] publish to firefox store
 - [x] favicon for options page
 - [x] link to todo from readme

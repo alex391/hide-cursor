@@ -1,6 +1,6 @@
 /*
-A Chrome (and Firefox eventually) extension that hides the cursor.
-Copyright (C) 2022  Alex Leute
+A Chrome and Firefox extension that hides the cursor.
+Copyright (C) 2023  Alex Leute
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -18,4 +18,22 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 body {
     font-size: large;
     font-family: sans-serif;
+}
+
+kbd { /* Thanks to https://developer.mozilla.org/en-US/docs/Web/HTML/Element/kbd */
+    background-color: #eee;
+    border-radius: 3px;
+    border: 1px solid #b4b4b4;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 2px 0 0 rgba(255, 255, 255, 0.7) inset;
+    color: #333;
+    display: inline-block;
+    font-size: 0.85em;
+    font-weight: 700;
+    line-height: 1;
+    padding: 2px 4px;
+    white-space: nowrap;
+}
+
+img {
+    height: 1em;
 }

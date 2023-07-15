@@ -3,13 +3,11 @@
     "description": "Hide the cursor when a shortcut key is pressed",
     "version": "1.0.0",
     "manifest_version": 3,
+    "minimum_chrome_version": "92",
     "permissions": ["activeTab", "scripting"],
-    "options_ui": {
-        "page": "options-firefox.html",
-        "browser_style": false
-    },
+    "options_page": "options.html",
     "background": {
-        "scripts": [ "background.js" ],
+        "service_worker": "background.js",
         "type": "module"
     },
     "action": {
@@ -29,9 +27,7 @@
     ],
     "commands": {
         "toggle-hidden": {
-            "suggested_key": {
-                "default": "Ctrl+Shift+Y"
-            },
+            "suggested_key": "Ctrl+Shift+H",
             "description": "Toggle weather the cursor is shown"
         }
     },
