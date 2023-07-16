@@ -4,6 +4,11 @@
     "version": "1.0.0",
     "manifest_version": 3,
     "permissions": ["activeTab", "scripting"],
+    "browser_specific_settings": {
+        "gecko": {
+          "id": "{3a436cf1-9fa1-447a-af24-dd438567adb2}"
+        }
+    },
     "options_ui": {
         "page": "options-firefox.html",
         "browser_style": false
