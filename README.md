@@ -17,7 +17,7 @@ A Chrome and Firefox extension that hides the cursor.
 5. Click "Load Temporary Add-on..."
 6. Select `manifest.json`
 ### From the Chrome Web Store
-[https://chrome.google.com/webstore/detail/hide-cursor/kldbplphckmjnjljpfikobfpolmoidge/related](https://chrome.google.com/webstore/detail/hide-cursor/kldbplphckmjnjljpfikobfpolmoidge/related)
+[https://chrome.google.com/webstore/detail/hide-cursor/kldbplphckmjnjljpfikobfpolmoidge/](https://chrome.google.com/webstore/detail/hide-cursor/kldbplphckmjnjljpfikobfpolmoidge/)
 ### From the Firefox Add-ons Store
 [https://addons.mozilla.org/addon/hide-cursor/](https://addons.mozilla.org/addon/hide-cursor/)
 ## Current plans
