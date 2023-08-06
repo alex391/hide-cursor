@@ -6,7 +6,7 @@
 - [x] Restore original cursor css, rather than just setting it to auto
 - [x] publish to Chrome store
 - [x] firefox compatibility
-- [ ] publish to firefox store
+- [x] publish to firefox store
 - [x] favicon for options page
 - [x] link to todo from readme
 - [x] add installation instructions (from source)
